@@ -8,7 +8,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Noto+Sans+KR:wght@300;400;500&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="/frontend/assets/css/header.css" />
+    <link rel="stylesheet" href="./../assets/css/header.css" />
 </head>
 
 <body>
@@ -17,15 +17,15 @@
         <div class="headerInner">
 
             <!-- 로고 -->
-            <a href="#" class="headerLogo">
-                <img src="/frontend/assets/img/UniBridge.png" alt="UniBridge" />
+            <a href="/main.html" class="headerLogo">
+                <img src="../../../../assets/img/UniBridge.png" alt="UniBridge" />
             </a>
 
             <nav class="headerNav">
                 <a href="#">멘토 검색</a>
-                <a href="#">게시판</a>
+                <a href="/html/user/mentee/mentorBoard/mentorBoardList.html">게시판</a>
                 <a href="#">학습보고서</a>
-                <a href="#">공지사항</a>
+                <a href="/announceBoard.html">공지사항</a>
             </nav>
 
             <div class="headerAuthGroup">
@@ -33,10 +33,18 @@
                     <span class="userName">홍길동</span>/
                     <span class="userRoleBadge mentoRoleBadge">멘토</span>
                 </div>
+
                 <div class="headerDivider"></div>
-                <a href="#" class="headerBtnText" id="headerBtnMypage">마이페이지</a>
+
+                <form action="#" method="GET" style="display:inline;">
+                    <button type="submit" class="headerBtnText" id="headerBtnMypage">마이페이지</button>
+                </form>
+
                 <div class="headerDivider"></div>
-                <a href="#" class="headerBtnText logout" id="headerBtnLogout">로그아웃</a>
+
+                <form action="#" method="POST" style="display:inline;">
+                    <button type="submit" class="headerBtnText logout" id="headerBtnLogout">로그아웃</button>
+                </form>
             </div>
 
         </div>

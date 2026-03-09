@@ -6,7 +6,7 @@ const headerTemplates = {
     <header class="headerWrap">
       <div class="headerInner">
         <a href="/" class="headerLogo">
-          <img src="/frontend/assets/img/UniBridge.png" alt="UniBridge" />
+          <img src="./../../assets/img/UniBridge.png" alt="UniBridge" />
         </a>
         <nav class="headerNav">
           <a href="#">멘토 검색</a>
@@ -26,7 +26,7 @@ const headerTemplates = {
     <header class="headerWrap">
       <div class="headerInner">
         <a href="/" class="headerLogo">
-          <img src="/frontend/assets/img/UniBridge.png" alt="UniBridge" />
+          <img src="./../../assets/img/UniBridge.png" alt="UniBridge" />
         </a>
         <nav class="headerNav">
           <a href="#">멘토 검색</a>
@@ -52,7 +52,7 @@ const headerTemplates = {
     <header class="headerWrap">
       <div class="headerInner">
         <a href="/" class="headerLogo">
-          <img src="/frontend/assets/img/UniBridge.png" alt="UniBridge" />
+          <img src="./../../assets/img/UniBridge.png" alt="UniBridge" />
         </a>
         <nav class="headerNav">
           <a href="#">멘토 검색</a>
@@ -78,7 +78,7 @@ const headerTemplates = {
     <header class="headerWrap">
       <div class="headerInner">
         <a href="/" class="headerLogo">
-          <img src="/frontend/assets/img/UniBridge.png" alt="UniBridge" />
+          <img src="./../../assets/img/UniBridge.png" alt="UniBridge" />
         </a>
         <nav class="headerNav">
           <a href="#">멘토 검색</a>
