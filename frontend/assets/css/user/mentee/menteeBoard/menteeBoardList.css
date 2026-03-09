@@ -1,9 +1,15 @@
 /* ── 멘티 게시판 페이지 ── */
 .menteeBoardWrap {
+<<<<<<< HEAD
   max-width: 1144px;
   margin: 0 auto;
   padding: 40px 28px 60px;
   padding-top: 96px; /* 헤더 56px + 여백 40px */
+=======
+  width: 100%;
+  box-sizing: border-box;
+  padding: 96px 75px 60px;
+>>>>>>> main
 }
 
 .menteeBoardTitle {
@@ -14,6 +20,7 @@
   margin-bottom: 28px;
 }
 
+<<<<<<< HEAD
 /* ── 목록 테이블 ── */
 .menteeBoardList {
   width: 100%;
@@ -27,12 +34,32 @@
 }
 
 .menteeBoardList thead th {
+=======
+/* ── 목록 컨테이너 ── */
+.menteeBoardList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── 헤더 행 ── */
+.menteeBoardHeaderRow {
+  display: flex;
+  align-items: center;
+  border-top: 2px solid #2c5f8a;
+  border-bottom: 1px solid #dde6f0;
+  background: #fff;
+}
+
+.menteeBoardTh {
+>>>>>>> main
   font-size: 13px;
   font-weight: 600;
   color: #555;
   padding: 12px 8px;
   font-family: 'Noto Sans KR', sans-serif;
   text-align: left;
+<<<<<<< HEAD
 }
 
 /* 컬럼 너비 설정 */
@@ -44,60 +71,136 @@
 
 /* ── 행(Row) 스타일 ── */
 .menteeBoardList tbody tr {
+=======
+  flex-shrink: 0;
+}
+
+/* ── 본문 행 ── */
+.menteeBoardRow {
+  display: flex;
+  align-items: center;
+>>>>>>> main
   border-bottom: 1px solid #eef2f7;
   cursor: pointer;
   transition: background 0.12s;
 }
 
+<<<<<<< HEAD
 .menteeBoardList tbody tr:hover {
   background: #f4f9ff;
 }
 
 .menteeBoardList tbody td {
+=======
+.menteeBoardRow:hover {
+  background: #f4f9ff;
+}
+
+.menteeBoardTd {
+>>>>>>> main
   font-size: 13.5px;
   color: #333;
   padding: 13px 8px;
   font-family: 'Noto Sans KR', sans-serif;
+<<<<<<< HEAD
 }
 
 /* 번호 */
 .menteeBoardTdNum {
   text-align: center;
+=======
+  flex-shrink: 0;
+}
+
+/* ── 컬럼 너비 ── */
+.menteeBoardTh:first-child,
+.menteeBoardTdNum {
+  width: 60px;
+  text-align: center;
+}
+
+.menteeBoardThTitle,
+.menteeBoardTdTitle {
+  flex: 1;
+  flex-shrink: 1;
+}
+
+.menteeBoardThDate,
+.menteeBoardTdDate {
+  width: 160px;
+  text-align: center;
+}
+
+.menteeBoardThAuthor,
+.menteeBoardTdAuthor {
+  width: 100px;
+  text-align: center;
+}
+
+.menteeBoardThViews,
+.menteeBoardTdViews {
+  width: 80px;
+  text-align: center;
+}
+
+/* ── 세부 스타일 ── */
+.menteeBoardTdNum {
+>>>>>>> main
   color: #888;
   font-size: 13px;
 }
 
+<<<<<<< HEAD
 /* 제목 */
+=======
+>>>>>>> main
 .menteeBoardTdTitle {
   font-weight: 500;
   color: #1a1a1a;
 }
 
+<<<<<<< HEAD
 .menteeBoardTdTitle:hover {
+=======
+.menteeBoardRow:hover .menteeBoardTdTitle {
+>>>>>>> main
   color: #2c5f8a;
   text-decoration: underline;
 }
 
+<<<<<<< HEAD
 /* 날짜 */
+=======
+>>>>>>> main
 .menteeBoardTdDate {
   color: #aaa;
   font-size: 12.5px;
 }
 
+<<<<<<< HEAD
 /* 작성자 */
+=======
+>>>>>>> main
 .menteeBoardTdAuthor {
   color: #333;
   font-size: 13px;
   font-weight: 500;
 }
 
+<<<<<<< HEAD
 /* 조회수 */
+=======
+>>>>>>> main
 .menteeBoardTdViews {
   color: #aaa;
   font-size: 12.5px;
 }
 
+<<<<<<< HEAD
 /* ── 하단 영역 (페이지네이션 + 버튼) ── */
+=======
+/* ── 하단 영역 ── */
+>>>>>>> main
 .menteeBoardFooter {
   display: flex;
   align-items: center;
@@ -105,6 +208,7 @@
   margin-top: 32px;
 }
 
+<<<<<<< HEAD
 /* 페이지네이션 */
 .menteeBoardPaginationWrap {
   display: flex;
@@ -113,6 +217,16 @@
   gap: 6px;
   flex-grow: 1; /* 중앙 정렬을 위해 공간 차지 */
   margin-left: 80px; /* 글작성 버튼과의 균형을 위한 여백 */
+=======
+/* ── 페이지네이션 ── */
+.menteeBoardPaginationWrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-grow: 1;
+  justify-content: center;
+  margin-left: 80px;
+>>>>>>> main
 }
 
 .menteeBoardPageBtn {
@@ -144,12 +258,16 @@
   font-weight: 600;
 }
 
+<<<<<<< HEAD
 .menteeBoardPageNext {
   color: #2c5f8a;
   font-size: 14px;
 }
 
 /* 글작성 버튼 */
+=======
+/* ── 글작성 버튼 ── */
+>>>>>>> main
 .menteeBoardWriteBtn {
   font-size: 13px;
   font-weight: 500;
@@ -161,6 +279,10 @@
   cursor: pointer;
   font-family: 'Noto Sans KR', sans-serif;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
+<<<<<<< HEAD
+=======
+  flex-shrink: 0;
+>>>>>>> main
 }
 
 .menteeBoardWriteBtn:hover {
