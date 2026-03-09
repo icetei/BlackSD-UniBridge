@@ -1,9 +1,8 @@
-/* ── 멘티 게시판 페이지 ── */
+/* ── 멘토 게시판 페이지 ── */
 .mentorBoardWrap {
-  max-width: 1144px;
-  margin: 0 auto;
-  padding: 40px 28px 60px;
-  padding-top: 96px; /* 헤더 56px + 여백 40px */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 96px 75px 60px;
 }
 
 .mentorBoardTitle {
@@ -14,90 +13,117 @@
   margin-bottom: 28px;
 }
 
-/* ── 목록 테이블 ── */
+/* ── 목록 컨테이너 ── */
 .mentorBoardList {
   width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
+  display: flex;
+  flex-direction: column;
 }
 
-.mentorBoardList thead tr {
+/* ── 헤더 행 ── */
+.mentorBoardHeaderRow {
+  display: flex;
+  align-items: center;
   border-top: 2px solid #2c5f8a;
   border-bottom: 1px solid #dde6f0;
+  background: #fff;
 }
 
-.mentorBoardList thead th {
+.mentorBoardTh {
   font-size: 13px;
   font-weight: 600;
   color: #555;
   padding: 12px 8px;
   font-family: 'Noto Sans KR', sans-serif;
   text-align: left;
+  flex-shrink: 0;
 }
 
-/* 컬럼 너비 설정 */
-.mentorBoardList thead th:first-child { width: 60px; text-align: center; }
-.mentorBoardList thead th.mentorBoardThTitle { /* 남은 공간 자동으로 채움 */ }
-.mentorBoardList thead th.mentorBoardThDate { width: 160px; }
-.mentorBoardList thead th.mentorBoardThAuthor { width: 100px; }
-.mentorBoardList thead th.mentorBoardThViews { width: 80px; }
-
-/* ── 행(Row) 스타일 ── */
-.mentorBoardList tbody tr {
+/* ── 본문 행 ── */
+.mentorBoardRow {
+  display: flex;
+  align-items: center;
   border-bottom: 1px solid #eef2f7;
   cursor: pointer;
   transition: background 0.12s;
 }
 
-.mentorBoardList tbody tr:hover {
+.mentorBoardRow:hover {
   background: #f4f9ff;
 }
 
-.mentorBoardList tbody td {
+.mentorBoardTd {
   font-size: 13.5px;
   color: #333;
   padding: 13px 8px;
   font-family: 'Noto Sans KR', sans-serif;
+  flex-shrink: 0;
 }
 
-/* 번호 */
+/* ── 컬럼 너비 ── */
+.mentorBoardTh:first-child,
 .mentorBoardTdNum {
+  width: 60px;
   text-align: center;
+}
+
+.mentorBoardThTitle,
+.mentorBoardTdTitle {
+  flex: 1;
+  flex-shrink: 1;
+}
+
+.mentorBoardThDate,
+.mentorBoardTdDate {
+  width: 160px;
+  text-align: center;
+}
+
+.mentorBoardThAuthor,
+.mentorBoardTdAuthor {
+  width: 100px;
+  text-align: center;
+}
+
+.mentorBoardThViews,
+.mentorBoardTdViews {
+  width: 80px;
+  text-align: center;
+}
+
+/* ── 세부 스타일 ── */
+.mentorBoardTdNum {
   color: #888;
   font-size: 13px;
 }
 
-/* 제목 */
 .mentorBoardTdTitle {
   font-weight: 500;
   color: #1a1a1a;
 }
 
-.mentorBoardTdTitle:hover {
+.mentorBoardRow:hover .mentorBoardTdTitle {
   color: #2c5f8a;
   text-decoration: underline;
 }
 
-/* 날짜 */
 .mentorBoardTdDate {
   color: #aaa;
   font-size: 12.5px;
 }
 
-/* 작성자 */
 .mentorBoardTdAuthor {
   color: #333;
   font-size: 13px;
   font-weight: 500;
 }
 
-/* 조회수 */
 .mentorBoardTdViews {
   color: #aaa;
   font-size: 12.5px;
 }
 
-/* ── 하단 영역 (페이지네이션 + 버튼) ── */
+/* ── 하단 영역 ── */
 .mentorBoardFooter {
   display: flex;
   align-items: center;
@@ -105,14 +131,14 @@
   margin-top: 32px;
 }
 
-/* 페이지네이션 */
+/* ── 페이지네이션 ── */
 .mentorBoardPaginationWrap {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 6px;
-  flex-grow: 1; /* 중앙 정렬을 위해 공간 차지 */
-  margin-left: 80px; /* 글작성 버튼과의 균형을 위한 여백 */
+  flex-grow: 1;
+  justify-content: center;
+  margin-left: 80px;
 }
 
 .mentorBoardPageBtn {
@@ -149,7 +175,7 @@
   font-size: 14px;
 }
 
-/* 글작성 버튼 */
+/* ── 글작성 버튼 ── */
 .mentorBoardWriteBtn {
   font-size: 13px;
   font-weight: 500;
@@ -161,6 +187,7 @@
   cursor: pointer;
   font-family: 'Noto Sans KR', sans-serif;
   transition: background 0.15s, color 0.15s, border-color 0.15s;
+  flex-shrink: 0;
 }
 
 .mentorBoardWriteBtn:hover {

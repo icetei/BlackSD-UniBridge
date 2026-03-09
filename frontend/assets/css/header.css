@@ -118,6 +118,7 @@ body {
 
 /* 공통 텍스트 버튼 */
 .headerBtnText {
+  font: inherit;
   font-size: 13px;
   font-family: var(--bodyFont);
   font-weight: 400;
@@ -125,7 +126,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 0;
   border-radius: 3px;
   text-decoration: none;
   letter-spacing: 0.1px;
