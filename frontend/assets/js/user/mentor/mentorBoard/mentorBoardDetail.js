@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (deleteBtn) {
     deleteBtn.addEventListener('click', () => {
       if (confirm('게시글을 삭제하시겠습니까?')) {
-        // await fetch(`/api/board/mentor/${boardId}`, { method: 'DELETE' });
         window.location.href = './mentorBoardList.html';
       }
     });
@@ -41,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('댓글 내용을 입력해주세요.');
         return;
       }
-      // await fetch('/api/comment', { method: 'POST', body: JSON.stringify({ content }) });
       input.value = '';
     });
   }
@@ -59,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
       if (confirm('댓글을 삭제하시겠습니까?')) {
         const item = e.target.closest('.mentorBoardDetailCommentItem');
-        // await fetch(`/api/comment/${commentId}`, { method: 'DELETE' });
         item.remove();
       }
     });

@@ -12,21 +12,24 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // 2. 행 클릭 → 상세 페이지 이동
+
   const rows = document.querySelectorAll('.mentorBoardRow');
   rows.forEach((row) => {
     row.addEventListener('click', () => {
       const boardId = row.dataset.boardId;
       if (boardId) {
-        window.location.href = `./mentorBoardDetail.html?boardId=${boardId}`;
+        window.location.href = `/frontend/assets/html/user/mentor/mentorBoard/mentorBoardDetail.html?boardId=${boardId}`;
       }
     });
   });
 
-  // 3. 글작성 버튼
+  // 3. 글작성 버튼 
   const writeBtn = document.getElementById('mentorBoardWriteBtn');
   if (writeBtn) {
     writeBtn.addEventListener('click', () => {
-      window.location.href = './mentorBoardCreate.html';
+      window.location.href = '/frontend/assets/html/user/mentor/mentorBoard/mentorBoardCreate.html';
     });
   }
 });
+
+
