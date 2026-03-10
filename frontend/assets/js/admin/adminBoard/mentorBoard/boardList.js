@@ -23,11 +23,19 @@ document.addEventListener("DOMContentLoaded", () => {
      목록 렌더
   ======================== */
   let currentPage = 1;
+  let dateFrom = "";
+  let dateTo = "";
   const boardTableBody = document.getElementById("boardTableBody");
 
   function renderTable(page) {
     if (!boardTableBody) return;
-    const posts = BoardStore.getPage(boardType, page);
+    const posts = BoardStore.getPage(boardType, page, dateFrom, dateTo);
+
+    if (posts.length === 0) {
+      boardTableBody.innerHTML = `<div style="text-align:center; padding:40px; color:#aaa; font-size:16px;">조회된 게시글이 없습니다.</div>`;
+      return;
+    }
+
     boardTableBody.innerHTML = posts.map(p => `
       <div class="board-table-row" data-id="${p.id}" style="cursor:pointer;">
         <div class="col col-no">${p.id}</div>
@@ -55,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderPagination() {
     if (!pagination) return;
-    const TOTAL_PAGES = BoardStore.totalPages(boardType);
+    const TOTAL_PAGES = BoardStore.totalPages(boardType, dateFrom, dateTo);
     const GROUP_SIZE = 5;
     const groupStart = Math.floor((currentPage - 1) / GROUP_SIZE) * GROUP_SIZE + 1;
     const groupEnd = Math.min(groupStart + GROUP_SIZE - 1, TOTAL_PAGES);
@@ -76,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     pagination.addEventListener("click", e => {
       const btn = e.target.closest(".page-btn");
       if (!btn) return;
-      const TOTAL_PAGES = BoardStore.totalPages(boardType);
+      const TOTAL_PAGES = BoardStore.totalPages(boardType, dateFrom, dateTo);
       const GROUP_SIZE = 5;
       const groupStart = Math.floor((currentPage - 1) / GROUP_SIZE) * GROUP_SIZE + 1;
       const groupEnd = Math.min(groupStart + GROUP_SIZE - 1, TOTAL_PAGES);
@@ -109,7 +117,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnSearch = document.getElementById("btnSearch");
   if (btnSearch) {
     btnSearch.addEventListener("click", () => {
-      alert("조회 기능은 백엔드 연동 후 동작합니다.");
+      const from = document.getElementById("dateFrom")?.value;
+      const to = document.getElementById("dateTo")?.value;
+      if (from && to && from > to) {
+        alert("시작 날짜가 종료 날짜보다 클 수 없습니다.");
+        return;
+      }
+      dateFrom = from || "";
+      dateTo = to || "";
+      currentPage = 1;
+      renderTable(currentPage);
+      renderPagination();
     });
   }
 

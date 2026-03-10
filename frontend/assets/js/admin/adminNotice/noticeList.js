@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentPage = 1;
   let currentType = "전체";
+  let dateFrom = "";
+  let dateTo = "";
 
   /* ========================
      목록 렌더
@@ -10,7 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderTable(page) {
     if (!noticeTableBody) return;
-    const notices = NoticeStore.getPage(page, currentType);
+    const notices = NoticeStore.getPage(page, currentType, dateFrom, dateTo);
+
+    if (notices.length === 0) {
+      noticeTableBody.innerHTML = `<div style="text-align:center; padding:40px; color:#aaa; font-size:16px;">조회된 공지사항이 없습니다.</div>`;
+      return;
+    }
+
     noticeTableBody.innerHTML = notices.map(n => `
       <div class="notice-table-row" data-id="${n.id}" style="cursor:pointer;">
         <div class="col col-no">${n.id}</div>
@@ -35,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderPagination() {
     if (!pagination) return;
-    const TOTAL_PAGES = NoticeStore.totalPages(currentType);
+    const TOTAL_PAGES = NoticeStore.totalPages(currentType, dateFrom, dateTo);
     const GROUP_SIZE = 5;
     const groupStart = Math.floor((currentPage - 1) / GROUP_SIZE) * GROUP_SIZE + 1;
     const groupEnd = Math.min(groupStart + GROUP_SIZE - 1, TOTAL_PAGES);
@@ -56,12 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
     pagination.addEventListener("click", e => {
       const btn = e.target.closest(".page-btn");
       if (!btn) return;
-      const TOTAL_PAGES = NoticeStore.totalPages(currentType);
+      const TOTAL_PAGES = NoticeStore.totalPages(currentType, dateFrom, dateTo);
       const GROUP_SIZE = 5;
       const groupStart = Math.floor((currentPage - 1) / GROUP_SIZE) * GROUP_SIZE + 1;
       const groupEnd = Math.min(groupStart + GROUP_SIZE - 1, TOTAL_PAGES);
 
-      if (btn.dataset.action === "prev") currentPage = groupStart - 1;
+      if (btn.dataset.action === "prev") currentPage = currentPage - 1;
       else if (btn.dataset.action === "next") currentPage = groupEnd + 1;
       else if (btn.dataset.page) currentPage = parseInt(btn.dataset.page);
 
@@ -109,7 +117,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnSearch = document.getElementById("btnSearch");
   if (btnSearch) {
     btnSearch.addEventListener("click", () => {
-      alert("날짜 조회 기능은 백엔드 연동 후 동작합니다.");
+      const from = document.getElementById("dateFrom")?.value;
+      const to = document.getElementById("dateTo")?.value;
+      if (from && to && from > to) {
+        alert("시작 날짜가 종료 날짜보다 클 수 없습니다.");
+        return;
+      }
+      dateFrom = from || "";
+      dateTo = to || "";
+      currentPage = 1;
+      renderTable(currentPage);
+      renderPagination();
     });
   }
 
