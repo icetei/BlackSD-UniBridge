@@ -34,6 +34,7 @@
       deleteBtn.addEventListener('click', function () {
         if (confirm('멘토링을 삭제하시겠습니까?')) {
           sessionStorage.removeItem('mentoringData');
+          alert("삭제되었습니다.");
           window.location.href = '/frontend/html/user/mentor/myPage/userMentoCreate/mentoringCreate.html';
         }
       });
