@@ -45,8 +45,10 @@ function updateFileName() {
 
 submitBtn.onclick = (event) => {
     event.preventDefault();
-    // 상대 경로 유지
-    const targetPath = "../../../../../../html/user/undetermined/myPage/myPage.html"; 
+
+    // 2. 원하는 경로를 직접 지정하여 이동합니다.
+    // 예: "userModify.html" 또는 "../../main.html" 등
+    const targetPath = "/frontend/html/user/undetermined/myPage/myPage.html"; 
     window.location.href = targetPath;
 };
 

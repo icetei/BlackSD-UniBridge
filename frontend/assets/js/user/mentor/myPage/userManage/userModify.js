@@ -1,5 +1,5 @@
 const DUPLICATE_NICKNAMES = ["test"];
-const VALID_AUTH_CODE = "1234"; // 테스트용 인증번호
+const VALID_AUTH_CODE = "12345"; // 테스트용 인증번호
 
 document.addEventListener("DOMContentLoaded", () => {
     // ── 요소 참조 ──

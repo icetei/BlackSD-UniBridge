@@ -6,7 +6,8 @@
 
 body {
     background-color: white;
-    font-family: 'NanumSquareRound', sans-serif; 
+    /* 폰트 글꼴 지정 NanumSquareRound */
+    font-family: 'NanumSquareRound', sans-serif;
 }
 
 .mainContainer {
@@ -79,6 +80,7 @@ main {
     align-items: center;
 }
 
+/* 제목 부분 (아이콘 + 텍스트) */
 .userManageTitle {
     display: flex;
     align-items: center;
@@ -101,7 +103,9 @@ main {
 }
 
 .userTypeBox {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2열로 나누기 */
+    column-gap: 60px;               /* 좌우 아이템 간격 */
     width: 60%;
     height: 65%;
     background: #eef2ff;
@@ -141,6 +145,35 @@ main {
     border-radius: 5px;
 }
 
+.userItem {
+    display: flex;
+    align-items: center;
+}
+
+.userItem label {
+    width: 120px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;            /* 글자 줄바꿈 방지 */
+}
+
+.userValue {
+    flex-grow: 1;                   /* 남은 공간 꽉 채우기 */
+    max-width: 300px;               /* 너무 길어지지 않게 제한 */
+    height: 30%;
+    font-size: 20px;
+    color: #222;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #d1d9e6;      /* 연한 테두리 */
+    border-radius: 13px;            /* 이미지처럼 둥근 알약 모양 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* 약간의 입체감 */
+}
+
+/* 작성 버튼 우측 하단 absolute */
 #userWriteBtn {
     position: absolute;
     bottom: 100px;
@@ -248,7 +281,7 @@ main {
     flex: 1;
     height: 40px;
     border: 1px solid black;
-    border-radius: 12px;
+    border-radius: 12px; /* 사진처럼 아주 둥글게 */
     padding: 0 15px;
     background-color: white;
     font-family: 'NanumSquareRound', sans-serif;

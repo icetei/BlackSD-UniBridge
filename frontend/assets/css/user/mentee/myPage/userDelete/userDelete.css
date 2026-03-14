@@ -9,6 +9,7 @@ body {
     font-family: 'NanumSquareRound', sans-serif; 
 }
 
+/* 기본 레이아웃 구성 */
 .mainContainer {
     display: flex;
     margin-top: 40px;
@@ -71,13 +72,14 @@ aside ul li a.active {
 
 main {
     flex: 1;
-    background: transparent;
     display: flex;
     flex-direction: column;
     gap: 20px;
     position: relative;
     align-items: center;
 }
+
+/* 제목 부분 (아이콘 + 텍스트) */
 
 .userManageTitle {
     display: flex;
