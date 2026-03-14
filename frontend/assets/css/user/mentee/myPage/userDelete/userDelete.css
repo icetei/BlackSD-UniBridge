@@ -11,7 +11,7 @@ body {
 }
 
 /* 기본 레이아웃 구성 */
-.main-container {
+.mainContainer {
     display: flex;
     margin-top: 40px;
     gap: 30px;
@@ -87,7 +87,6 @@ aside ul li a.active {
 /* 메인 콘텐츠 영역 */
 main {
     flex: 1;
-    background: transparent;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -96,7 +95,7 @@ main {
 }
 
 /* 제목 부분 (아이콘 + 텍스트) */
-.userManage-title {
+.userManageTitle {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -104,13 +103,13 @@ main {
     margin-left: 145px;
 }
 
-.userManage-title img {
+.userManageTitle img {
     margin-top: 30px;
     width: 36px;
     height: 36px;
 }
 
-.userManage-title .title {
+.userManageTitle .title {
     margin-top: 30px;
     font-size: 30px;
     font-weight: 500;
@@ -142,7 +141,7 @@ main {
 }
 
 .userInputBox{
-    margin-top: 40px;
+    margin-top: 15px;
     width: 50%;
 }
 
@@ -211,10 +210,15 @@ input {
     background-color: #c7d2fe;
 }
 
-.error-msg {
+.errorMsg {
     color: #ff0000;
     font-size: 16px;
     font-weight: 700;
+    margin-left: 150px; /* Label 너비와 동일하게 맞춰 정렬 */
+    height: 20px; /* 공간 확보 */
+}
+
+.spar{
     margin-left: 150px; /* Label 너비와 동일하게 맞춰 정렬 */
     height: 20px; /* 공간 확보 */
 }

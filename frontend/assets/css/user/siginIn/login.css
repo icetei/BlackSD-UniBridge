@@ -93,7 +93,7 @@ a{
     cursor: pointer;
 }
 
-.error{
+.errorMsg{
     color: red;
     font-size: 15px;
     font-weight: 700;

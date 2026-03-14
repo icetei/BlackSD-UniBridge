@@ -1,12 +1,12 @@
 const DUPLICATE_NICKNAMES = ["test"];
-const VALID_AUTH_CODE = "1234"; // 테스트용 인증번호
+const VALID_AUTH_CODE = "12345"; // 테스트용 인증번호
 
 document.addEventListener("DOMContentLoaded", () => {
     // ── 요소 참조 ──
     const completeBtn = document.querySelector(".userModifyBtn");
     const profileImg = document.querySelector(".userImg > img");
     const photoBtn = document.querySelector("#imgBtn");
-    const photoError = document.querySelector(".userImg .error-msg");
+    const photoError = document.querySelector(".userImg .errorMsg");
 
     // 상태 변수
     let isNickChecked = false; // 중복 확인 완료 여부
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nickInput = nickGroup.querySelector("input");
     const nickDupBtn = nickGroup.querySelectorAll("button")[0];
     const nickChangeBtn = nickGroup.querySelectorAll("button")[1];
-    const nickError = nickGroup.querySelector(".error-msg");
+    const nickError = nickGroup.querySelector(".errorMsg");
 
     nickInput.addEventListener("input", () => {
         isNickChecked = false;
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const pwConfirmInput = pwConfirmGroup.querySelector("input");
     const pwCheckBtn = pwConfirmGroup.querySelectorAll("button")[0];
     const pwChangeBtn = pwConfirmGroup.querySelectorAll("button")[1];
-    const pwError = pwConfirmGroup.querySelector(".error-msg");
+    const pwError = pwConfirmGroup.querySelector(".errorMsg");
 
     let isPwMatched = false;
 
@@ -123,13 +123,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // ──────────────────────────────────────
     const phoneInput = document.querySelectorAll(".inputGroup")[5].querySelector("input");
     const authSendBtn = document.querySelector(".authBtn");
-    const phoneError = document.querySelectorAll(".inputGroup")[5].querySelector(".error-msg");
+    const phoneError = document.querySelectorAll(".inputGroup")[5].querySelector(".errorMsg");
 
     const authGroup = document.querySelectorAll(".inputGroup")[6];
     const authInput = authGroup.querySelector("input");
     const authConfirmBtn = authGroup.querySelectorAll("button")[0];
     const phoneChangeBtn = authGroup.querySelectorAll("button")[1];
-    const authError = authGroup.querySelector(".error-msg");
+    const authError = authGroup.querySelector(".errorMsg");
 
     authSendBtn.addEventListener("click", () => {
         if (!phoneInput.value) {
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 5. 성별 변경 (추가된 부분)
     // ──────────────────────────────────────
     const genderGroup = document.querySelectorAll(".inputGroup")[7];
-    const genderChangeBtn = genderGroup.querySelector(".change");
+    const genderChangeBtn = genderGroup.querySelector(".changeBtn");
 
     genderChangeBtn.addEventListener("click", () => {
         const selectedGender = genderGroup.querySelector('input[name="role"]:checked');

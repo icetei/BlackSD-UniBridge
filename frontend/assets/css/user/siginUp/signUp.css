@@ -94,7 +94,7 @@ input {
     width: 20%; /* .duplication 버튼과 동일한 너비 */
 }
 
-.error-msg {
+.errorMsg {
     color: red;
     font-size: 12px;
     font-weight: 700;

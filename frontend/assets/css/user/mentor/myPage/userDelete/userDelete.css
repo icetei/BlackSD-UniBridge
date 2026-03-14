@@ -96,7 +96,7 @@ main {
 }
 
 /* 제목 부분 (아이콘 + 텍스트) */
-.userManage-title {
+.userManageTitle {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -104,13 +104,13 @@ main {
     margin-left: 145px;
 }
 
-.userManage-title img {
+.userManageTitle img {
     margin-top: 30px;
     width: 36px;
     height: 36px;
 }
 
-.userManage-title .title {
+.userManageTitle .title {
     margin-top: 30px;
     font-size: 30px;
     font-weight: 500;
@@ -211,7 +211,7 @@ input {
     background-color: #c7d2fe;
 }
 
-.error-msg {
+.errorMsg {
     color: #ff0000;
     font-size: 16px;
     font-weight: 700;

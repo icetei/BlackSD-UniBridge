@@ -18,10 +18,10 @@
         <aside>
             <div class="myPageTitle">마이페이지</div>
             <ul>
-                <li><a href="/frontend/html/user/mentee/myPage/myPage.html">계정 관리</a></li>
+                <li><a href="/frontend/html/user/mentee/myPage/myPage.html" >계정 관리</a></li>
                 <li><a href="/frontend/html/user/mentee/myPage/userSurvey/userSurvey.html">설문 조사</a></li>
-                <li><a href="/frontend//html/user/mentee/myPage/userPayLog/payLog.html">결제 정보</a></li>
-                <li><a href="/frontend//html/user/mentee/myPage/userMatching/userMatching.html">매칭 정보</a></li>
+                <li><a href="/frontend/html/user/mentee/myPage/userPayLog/payLog.html">결제 정보</a></li>
+                <li><a href="/frontend/html/user/mentee/myPage/userMatching/userMatching.html">매칭 정보</a></li>
                 <li><a href="/frontend/html/user/mentee/myPage/userDelete/userDelete.html" class="active">회원 탈퇴</a></li>
             </ul>
         </aside>
@@ -45,7 +45,7 @@
                             <input type="text" id="userId" class="userInput">
                             <div class="spacer"></div>
                         </div>
-                        <div class="error-msg" id="login-error"></div>
+                        <div class="errorMsg" id="login-error"></div>
                     </div>
                     
                     <div class="inputGroup-container">
@@ -54,6 +54,7 @@
                             <input type="password" id="userPw" class="userInput">
                             <div class="spacer"></div>
                         </div>
+                        <div class="spar" id="space"></div>
                     </div>
 
                     <div class="inputGroup-container">
@@ -62,6 +63,7 @@
                             <input type="text" id="userPhone" class="userInput">
                             <button type="button" class="duplication" id="sendSms">인증 번호 전송</button>
                         </div>
+                        <div class="spar" id="space"></div>
                     </div>
 
                     <div class="inputGroup-container">
@@ -70,12 +72,12 @@
                             <input type="text" id="authCode" class="userInput">
                             <button type="button" class="duplication" id="verifySms">인증 확인</button>
                         </div>
-                        <div class="error-msg" id="auth-error"></div>
+                        <div class="errorMsg" id="auth-error"></div>
                     </div>
 
                     <button type="submit" class="userDeleteBtn" id="submitBtn" disabled>탈퇴 신청</button>
                 </form>
-                
+
             </div>
         </main>
 
